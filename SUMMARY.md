@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome!](README.md)
+* [Welcome](README.md)
   * [⬆️ Privilege Escalation](readme/privilege-escalation/README.md)
     * [🪟 Windows](readme/privilege-escalation/windows/README.md)
       * [📋 Windows Privesc Checklist](readme/privilege-escalation/windows/windows-privesc-checklist.md)
