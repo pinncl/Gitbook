@@ -3,10 +3,14 @@
 * Fuzz first with feroxbuster
 
 {% code overflow="wrap" %}
-```
+```bash
 feroxbuster -u http://whatever.com/ -x php -C 404 -A --wordlist '/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt' -B --auto-tune
 ```
 {% endcode %}
+
+```bash
+ffuf -u http://whatever.com/FUZZ.pdf -w /usr/share/wordlists/dirb/big.txt -t 5
+```
 
 * `robots.txt` , `.svn`, `.DS_STORE`
 * Try different request type(**POST & GET**) in burp
@@ -23,14 +27,14 @@ curl -s http://192.168.219.140:8000/ | html2markdown
 nmap -sV -p8081 --script http-shellshock --script-args uri=/cgi-bin/user.sh,cmd=echo\;/bin/ls 127.0.0.1
 ```
 
-* [ ] Try DoNotExist.php, DoNotExist.html, DoNotExist to check if the website 404 message changes . Refer snoopy ippsec.&#x20;
+* [ ] Try DoNotExist.php, DoNotExist.html, DoNotExist to check if the website 404 message changes . Refer snoopy ippsec.
 * [ ] **Always add the DNS address**
 * [ ] Check for default passwords
 * [ ] Check for headers if any special header required to access vhost
 * [ ] Nmap http enum scan: `sudo nmap -p80 --script=http-enum <ip>`
 * [ ] In curl use `--data-urlencode` to automaticatlly url encode
 * [ ] If _Apache 2.4.49_ then path traversal is vulnerable.
-* [ ] phpinfo for path:&#x20;
+* [ ] phpinfo for path:
 
 <figure><img src="../../.gitbook/assets/Web app checklist.png" alt=""><figcaption></figcaption></figure>
 
