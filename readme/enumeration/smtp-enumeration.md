@@ -22,6 +22,8 @@ Or alternatively:
 
 ```
 sendemail -f 'jonas@localhost' \
+-xu 'jonas@localhost' \
+-xp 'password' \
 -t 'mailadmin@localhost' \
 -s 192.168.219.140:25 \
 -u 'a spreadsheet' \
@@ -33,6 +35,6 @@ Useful to send payloads.
 
 ### Postfix Disclaimer PrivEsc
 
-If files like _**/etc/postfix/disclaimer**_ refer to [postfish](https://viperone.gitbook.io/pentest-everything/writeups/pg-practice/linux/postfish)&#x20;
+If files like _**/etc/postfix/disclaimer**_ refer to [postfish](https://viperone.gitbook.io/pentest-everything/writeups/pg-practice/linux/postfish)
 
 When an address in `/etc/postfix/disclaimer_addresses` sends or receives emails the `/etc/postfix/disclaimer` gets executed. This file takes the contents of `/etc/postfix/disclaimer.txt` and appends it to the emails.
